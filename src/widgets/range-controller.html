@@ -1,17 +1,54 @@
 <template>
   <style>
     .range-controller {
-      width: 400px;
+      width: 900px;
       height: 200px;
     }
 
-    .range-controller .range { margin: 20px 0; }
+    .range-controller .column {
+      float: left;
+      margin: 0 5%;
+      width: 40%;
+    }
+
+    .range-controller .width-and-height .range { margin: 20px 0; }
+
+    .range-controller .red-green-blue .color {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .range-controller .red-green-blue .range {
+      float: left;
+      margin-right: 20px;
+      height: 150px;
+    }
+
+    .range-controller .red-green-blue .red { background: RGB(250, 125, 125); }
+    .range-controller .red-green-blue .green { background: RGB(125, 250, 125); }
+    .range-controller .red-green-blue .blue { background: RGB(125, 125, 250); }
+
+    .range-controller .red-green-blue .noUi-origin { background: #F5F5F5; }
   </style>
 
   <aside class="range-controller">
-    ${width}x${height}
+    <div class="column width-and-height">
+      <h4>${width}x${height}</h4>
 
-    <div class="range width"></div>
-    <div class="range height"><div>
+      <div class="range width"></div>
+      <div class="range height"></div>
+    </div>
+
+    <div class="column red-green-blue">
+      <h4>
+        <span class="color" css="background: RGB(${red}, ${green}, ${blue});"></span>
+        RGB(${red}, ${green}, ${blue})
+      </h4>
+
+      <div class="range red"></div>
+      <div class="range green"></div>
+      <div class="range blue"><div>
+    </div>
   </aside>
 </template>

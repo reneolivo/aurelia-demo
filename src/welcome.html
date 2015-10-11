@@ -9,7 +9,7 @@
     <require from="widgets/square"></require>
     <require from="widgets/range-controller"></require>
 
-    <h1>Prueba</h1>
+    <h1>Binding</h1>
 
     <hr />
     <range-controller range-controller.ref="rc"></range-controller>
@@ -17,6 +17,6 @@
     <hr />
     <square width.bind="rc.width" height.bind="rc.height"></square>
     <square width.bind="rc.width"></square>
-    <square></square>
+    <square style="background: RGB(${rc.red}, ${rc.green}, ${rc.blue})"></square>
   </section>
 </template>
