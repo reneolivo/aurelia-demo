@@ -1,0 +1,11 @@
+<template>
+  <style>
+    .square {
+      width: ${style.width};
+      height: ${style.height};
+      border: ${style.border};
+    }
+  </style>
+
+  <div class="square" click.delegate="onClick()">${style.width}, ${style.height}</div>
+</template>
