@@ -1,7 +1,17 @@
 <template>
+  <style>
+    .range-controller {
+      width: 400px;
+      height: 200px;
+    }
+
+    .range-controller .range { margin: 20px 0; }
+  </style>
+
   <aside class="range-controller">
     ${width}x${height}
-    <input type="range" name="width" min="0" max="500" step="5" value.bind="width" />
-    <input type="range" name="height" min="0" max="500" step="5" value.bind="height" />
+
+    <div class="range width"></div>
+    <div class="range height"><div>
   </aside>
 </template>
