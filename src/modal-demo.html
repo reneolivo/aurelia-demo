@@ -1,0 +1,15 @@
+<template>
+  <require from="widgets/modal"></require>
+
+  <button class="btn btn-primary" click.trigger="openModal('first')">Open first modal</button>
+
+  <modal id="first">
+    <modal-title>Hello modal 1</modal-title>
+
+    <modal-content>
+      Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Pellentesque posuere. Nullam quis ante.
+
+      Nunc interdum lacus sit amet orci. Fusce a quam. Nam eget dui.
+    </modal-content>
+  </modal>
+</template>

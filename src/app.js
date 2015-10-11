@@ -2,9 +2,9 @@ export class App {
   configureRouter(config, router){
     config.title = 'Aurelia';
     config.map([
-      { route: ['','welcome'],  name: 'welcome',      moduleId: 'welcome',      nav: true, title:'Welcome' },
-      { route: 'users',         name: 'users',        moduleId: 'users',        nav: true, title:'Github Users' },
-      { route: 'child-router',  name: 'child-router', moduleId: 'child-router', nav: true, title:'Child Router' }
+      { route: ['','home'],  name: 'home',      moduleId: 'welcome',      nav: true, title:'Home' },
+      { route: 'modal', name: 'modal', moduleId: 'modal-demo', nav: true, title: 'Modal'},
+      { route: 'gallery',         name: 'gallery',        moduleId: 'gallery',        nav: true, title:'Gallery' }
     ]);
 
     this.router = router;
