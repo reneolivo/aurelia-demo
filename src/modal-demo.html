@@ -1,9 +1,9 @@
 <template>
   <require from="widgets/modal"></require>
 
-  <button class="btn btn-primary" click.trigger="openModal('first')">Open first modal</button>
+  <button class="btn btn-primary" click.trigger="modal1.open()">Open first modal</button>
 
-  <modal id="first">
+  <modal id="first" modal.ref="modal1">
     <modal-title>Hello modal 1</modal-title>
 
     <modal-content>
