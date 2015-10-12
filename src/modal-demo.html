@@ -7,29 +7,72 @@
     }
   </style>
 
-  <form class="form col-md-4">
-    <div class="form-group">
-      <label class="control-label">Modal Title</label>
-      <input class="form-control" ref="title" value="Hello Modal" />
-    </div>
+  <section id="modal-forms">
+    <form class="form col-md-4">
+      <h3>Modal 1</h3>
+      <h4>Edit modal information</h4>
 
-    <div class="form-group">
-      <label class="control-label">Moda Content</label>
-      <textarea class="form-control" ref="content" rows="5">
-Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Pellentesque posuere. Nullam quis ante.
+      <div class="form-group">
+        <label class="control-label">Modal Title</label>
+        <input class="form-control" ref="title" value="Hello Modal" />
+      </div>
 
-Nunc interdum lacus sit amet orci. Fusce a quam. Nam eget dui.
-      </textarea>
-    </div>
+      <div class="form-group">
+        <label class="control-label">Moda Content</label>
+        <textarea class="form-control" ref="content" rows="5">
+  Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Pellentesque posuere. Nullam quis ante.
 
-    <div class="pull-right">
-      <button class="btn btn-primary" click.trigger="modal1.open()">Open first modal</button>
-    </div>
-  </form>
+  Nunc interdum lacus sit amet orci. Fusce a quam. Nam eget dui.
+        </textarea>
+      </div>
 
-  <modal id="first" modal.ref="modal1">
-    <modal-title>&gt;${title.value}&lt;</modal-title>
+      <div class="pull-right">
+        <button class="btn btn-primary" click.trigger="modal1.open()">
+          Open modal
+        </button>
+      </div>
+    </form>
 
-    <modal-content>${content.value}</modal-content>
-  </modal>
+    <form class="form col-md-4">
+      <h3>Modal 2</h3>
+      <h4>Show/hide custom foooter</h4>
+
+      <div class="form-group">
+        <button class="btn btn-danger" click.trigger="showFooter = true" show.bind="!showFooter">
+          <span class="glyphicon glyphicon-remove"></span>
+          Hide footer
+        </button>
+
+        <button class="btn btn-success" click.trigger="showFooter = false" show.bind="showFooter">
+          <span class="glyphicon glyphicon-ok" ></span>
+          Show footer
+        </button>
+
+        <button class="btn btn-primary" click.trigger="modal2.open()">
+          Open modal
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <section id="modals">
+    <modal modal.ref="modal1">
+      <modal-title>&gt;${title.value}&lt;</modal-title>
+
+      <modal-content>${content.value}</modal-content>
+    </modal>
+
+    <modal modal.ref="modal2">
+      <modal-title>Title</modal-title>
+
+      <modal-content>Content</modal-content>
+
+      <modal-footer if.bind="showFooter">
+        Custom Footer
+        <a href="#" class="btn btn-xs btn-default" click.trigger="modal2.close()">
+          Close
+        </a>
+      </modal-footer>
+    </modal>
+  </section>
 </template>

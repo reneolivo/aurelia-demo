@@ -5,6 +5,8 @@ import $ from 'jquery';
 @inject(Element)
 export class Modal {
   modal;
+  footer = null;
+  hasFooter = false;
 
   constructor(element) {
     this.element = element;
@@ -15,6 +17,12 @@ export class Modal {
   }
 
   open() {
+    this.hasFooter = this.footer.children.length > 0;
+
     this.modal.modal('show');
+  }
+
+  close() {
+    this.modal.modal('hide');
   }
 }
