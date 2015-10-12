@@ -1,15 +1,35 @@
 <template>
   <require from="widgets/modal"></require>
 
-  <button class="btn btn-primary" click.trigger="modal1.open()">Open first modal</button>
+  <style>
+    form {
+      margin-top: 50px;
+    }
+  </style>
+
+  <form class="form col-md-4">
+    <div class="form-group">
+      <label class="control-label">Modal Title</label>
+      <input class="form-control" ref="title" value="Hello Modal" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Moda Content</label>
+      <textarea class="form-control" ref="content" rows="5">
+Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Pellentesque posuere. Nullam quis ante.
+
+Nunc interdum lacus sit amet orci. Fusce a quam. Nam eget dui.
+      </textarea>
+    </div>
+
+    <div class="pull-right">
+      <button class="btn btn-primary" click.trigger="modal1.open()">Open first modal</button>
+    </div>
+  </form>
 
   <modal id="first" modal.ref="modal1">
-    <modal-title>Hello modal 1</modal-title>
+    <modal-title>&gt;${title.value}&lt;</modal-title>
 
-    <modal-content>
-      Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Pellentesque posuere. Nullam quis ante.
-
-      Nunc interdum lacus sit amet orci. Fusce a quam. Nam eget dui.
-    </modal-content>
+    <modal-content>${content.value}</modal-content>
   </modal>
 </template>
